@@ -20,3 +20,11 @@ int main(){
 	pthread_create(&th1,NULL,thread1,(void*)&n);
 	pthread_join(th1,NULL);
 }
+void *thread1(void *p)
+{ int n= *(int*)p;
+	for(int i=2;i<=n;i++)
+	{
+	  if(isprime(i))
+	 {printf("%d \t",i);}	
+	}
+	}
