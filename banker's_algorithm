@@ -5,22 +5,33 @@ int main()
 // P0, P1, P2, P3, P4 are the Process  
   
     int n, m, i, j, k; 
-    n=5; // Number of process
-    m=4; // Number of resources 
-    int allocate[5][4] = { { 0, 0, 1,2}, // P0    // Allocation Matrix 
-                        { 1, 0, 0,0 }, // P1 
-                        { 1, 3, 5,4 }, // P2 
-                        { 0, 6, 3,2 }, // P3 
-                        { 0, 0, 1,4 } }; // P4 
-  
-    int max[5][4] = { { 0, 0, 1,2 }, // P0    // MAX Matrix 
-                      { 1, 7, 5,0 }, // P1 
-                      { 2, 5, 3,6 }, // P2 
-                      { 0, 6, 5,2 }, // P3 
-                      { 0,6,5,6 } }; // P4 
-  
-    int avail[4] = { 1, 5, 2,0 }; // Available Resources 
-  
+     printf("enter the no of processes: ");
+    scanf("%d",&n); // Number of process
+    printf("enter the no of resources: ");
+    scanf("%d",&m); //number of resources
+    
+    int allocate[n][m];
+    for(i=0;i<n;i++)//initializing  allocated
+    {printf("enter values of allocated resources for p %d \n",i);
+    	for(j=0;j<m;j++)
+    { 
+	scanf("%d",&allocate[i][j]); }
+	}
+ 
+  int max[n][m];
+  for(i=0;i<n;i++)//initializing max
+    {printf("enter values of max resources for p %d \n",i);
+    	for(j=0;j<m;j++)
+    {
+	 scanf("%d",&max[i][j]); }
+	}
+    
+ int avail[m];  // Available Resources
+	printf("enter values of available resources"); 
+	int s;
+  for(s=0;s<m;s++)
+	   { scanf("%d",&avail[s]); }
+    
     int finish[n], p[n], ind = 0; 
     for (k = 0; k < n; k++) { 
         finish[k] = 0; 
