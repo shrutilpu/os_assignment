@@ -10,8 +10,7 @@ for(int i=2;i<=m/2;i++)
 	  {
 		return false;
 	  }
-	}	
-}
+	}}
 int main(){
 	pthread_t th1;
 	printf("enter no to get prime no less than or equal to that");
